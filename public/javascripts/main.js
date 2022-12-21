@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 /********************************************************************* */
 // Create event handler for delete course
-/********************************************************************* */
+/********************************************************************* 
 function deleteTea(e) {
     let url=baseURL+e.target.id;
     fetch(url, {method: 'DELETE'})
@@ -51,10 +51,10 @@ function deleteTea(e) {
             alert('There was an error '+error);
         });
 }
-
+*/
 /********************************************************************* */
 // Create event handler for ADD course
-/********************************************************************* */
+/********************************************************************* 
 document.getElementById("create").addEventListener("click", (e) => {
     
     var obj = {};
@@ -76,13 +76,13 @@ document.getElementById("create").addEventListener("click", (e) => {
         });
 });
 
-
+*/
 
 /********************************************************************* */
 // Create event handler for UPDATE course
-/********************************************************************* */
-/*
-function updateCourse(e) {
+/********************************************************************* 
+
+function updateTea(e) {
     
     let url=baseURL+e.target.id;
 
@@ -113,7 +113,7 @@ function updateCourse(e) {
     obj.id = id; //??????
     
 
-    Objektet som skall lagras i databasen
+    //Objektet som skall lagras i databasen
     var obj = {};
     obj.name = document.getElementById("courseName" + id).innerHTML;
     obj.code = document.getElementById("courseCode" + id).value;

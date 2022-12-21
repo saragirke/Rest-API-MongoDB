@@ -97,7 +97,7 @@ console.log("test" + req.body.name);
 
 /********************************************* 
  * Update tea
- *********************************************/
+ ********************************************
  router.put('/:id', function(req, res, next) {
     var id = req.params.id;
     // Create a new user
@@ -120,6 +120,23 @@ console.log("test" + req.body.name);
 	res.contentType('application/json');
 	res.send(jsonObj);
 
+});*/
+
+router.put('/:id', async (req, res) => {
+    try {
+      await Tea.findByIdAndUpdate(req.params.id, {
+          name: req.body.name,
+          type: req.body.type,
+          price: req.body.price,
+          amount: req.body.amount
+      });
+      // Send response in here
+
+
+    } catch(err) {
+        console.error(err.message);
+        res.send(400).send('Server Error');
+    }
 });
 
 
