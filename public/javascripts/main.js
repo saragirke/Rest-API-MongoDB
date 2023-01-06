@@ -76,7 +76,6 @@ document.getElementById("create").addEventListener("click", (e) => {
         });
 });
 
-*/
 
 /********************************************************************* */
 // Create event handler for UPDATE course
