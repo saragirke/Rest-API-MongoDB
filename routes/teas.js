@@ -14,7 +14,7 @@ router.use(bodyParser.json());
  *********************************************/
 var mongoose = require("mongoose");
 mongoose.set("strictQuery", true);
-mongoose.connect("mongodb://127.0.0.1:27017/tea", {
+mongoose.connect("mongodb+srv://Avokado321:GDY1qGbxGV8apOje@cluster0.8yzwcvr.mongodb.net/?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -115,12 +115,17 @@ db.once("open", function (callback) {
         name: req.body.name,
         type: req.body.type,
         price: req.body.price,
-        amount: req.body.amount,
+        amount: req.body.amount
       });
-      // Send response in here
+
+      res.send(req.body);
+
     } catch (err) {
       console.error(err.message);
       res.send(400).send("Server Error");
+      res.contentType("application/json");
+      res.send();
+
     }
   });
 
