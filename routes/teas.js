@@ -93,7 +93,7 @@ db.once("open", function (callback) {
       price: req.body.price,
       amount: req.body.amount,
     });
-    console.log("test" + req.body.name);
+    res.send(tea1);
 
     // Save new to db
     tea1.save(function (err) {
