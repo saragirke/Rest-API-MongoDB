@@ -139,7 +139,7 @@ db.once("open", function (callback) {
     Tea.deleteOne({ _id: id }, function (err) {
       if (err) return handleError(err);
     });
-    // Hämtar listan med te
+    // Get Tea list
     Tea.find(function (err, teas) {
       if (err) return console.error(err);
 
